@@ -1,7 +1,7 @@
 <template>
-  <main>
+  <div style="margin-top: 100px">
     <div>Home component here</div>
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts"></script>
