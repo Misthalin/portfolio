@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import SidebarMenu from "./SidebarMenu.vue";
+import SidebarMenu from "./sidebar/NavigationSidebar.vue";
 </script>
 
 <style scoped>

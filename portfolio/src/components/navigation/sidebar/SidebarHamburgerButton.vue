@@ -1,13 +1,24 @@
 <template>
-  <button aria-label="Menu" class="hamburger-menu-button">
+  <button aria-label="Menu">
     <div class="hamburger-box">
       <div class="hamburger-box-inner"></div>
     </div>
   </button>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { watchEffect } from "vue";
 
+const props = defineProps<{
+  isActive?: Boolean;
+}>();
+
+watchEffect(() => {
+  props.isActive
+    ? document.body.classList.add("blur")
+    : document.body.classList.remove("blur");
+});
+</script>
 <style scoped>
 button {
   cursor: pointer;
@@ -31,14 +42,13 @@ button {
   border-style: outset;
   border-image: initial;
 }
-.hamburger-menu-button .hamburger-box {
+.hamburger-box {
   display: inline-block;
   position: relative;
   width: var(--hamburger-width);
   height: 24px;
 }
-
-.hamburger-menu-button .hamburger-box-inner {
+.hamburger-box-inner {
   position: absolute;
   top: 50%;
   right: 0px;
@@ -46,43 +56,45 @@ button {
   height: 2px;
   border-radius: var(--border-radius);
   background-color: var(--green);
-  transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s;
-  transform: rotate(0deg);
+  transition: v-bind(
+    'props.isActive ? "transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s" : "transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s"'
+  );
+  transform: v-bind('props.isActive ? "rotate(225deg)" : "rotate(0deg)"');
 }
-.hamburger-menu-button .hamburger-box-inner::before {
+.hamburger-box-inner::before {
   content: "";
   display: block;
   position: absolute;
   left: auto;
   right: 0px;
-  width: var(--hamburger-width);
   height: 2px;
   border-radius: 4px;
   background-color: var(--green);
   transition-timing-function: ease;
   transition-duration: 0.15s;
   transition-property: transform;
-  width: 120%;
-  top: -10px;
-  opacity: 1;
-  transition: var(--ham-before);
+  width: v-bind('isActive ? "100%" : "120%"');
+  top: v-bind('isActive ? "0px" : "-10px"');
+  opacity: v-bind('isActive ? "0" : "1"');
+  transition: v-bind(
+    'isActive ? "var(--ham-before-active)" : "var(--ham-before)"'
+  );
 }
-
-.hamburger-menu-button .hamburger-box-inner::after {
-  width: 80%;
-  bottom: -10px;
-  transform: rotate(0deg);
-  transition: var(--ham-after);
+.hamburger-box-inner::after {
+  width: v-bind('isActive ? "100%" : "80%"');
+  bottom: v-bind('isActive ? "0px" : "-10px"');
+  transform: v-bind('isActive ? "rotate(90deg)" : "rotate(0deg)"');
+  transition: v-bind(
+    'isActive ? "var(--ham-after-active)" : "var(--ham-after)"'
+  );
 }
-
-.hamburger-menu-button .hamburger-box-inner::before,
-.hamburger-menu-button .hamburger-box-inner::after {
+.hamburger-box-inner::before,
+.hamburger-box-inner::after {
   content: "";
   display: block;
   position: absolute;
   left: auto;
   right: 0px;
-  width: var(--hamburger-width);
   height: 2px;
   border-radius: 4px;
   background-color: var(--green);
@@ -90,9 +102,8 @@ button {
   transition-duration: 0.15s;
   transition-property: transform;
 }
-
 @media (max-width: 768px) {
-  .hamburger-menu-button {
+  button {
     display: flex;
     -webkit-box-pack: center;
     justify-content: center;
