@@ -1,17 +1,19 @@
 /* Styles inspired by https://brittanychiang.com/ */
 
 :root {    
+
+  --aqua: #00dada;
   --dark-navy: #020c1b;
-  --navy: #0a192f;
-  --light-navy: #112240;
+  --navy:  #141c22;
+  --light-navy: #172026;
   --lightest-navy: #233554;
-  --navy-shadow: rgba(2,12,27,0.7);
-  --dark-slate: #495670;
+  --navy-shadow: #07121ac7;
+  --dark-slate: #273742;
   --slate: #8892b0;
-  --light-slate: #a8b2d1;
-  --lightest-slate: #ccd6f6;
-  --white: #e6f1ff;
-  --green: #64ffda;
+  --light-slate: #b2c6d3;
+  --lightest-slate: #cae6f3;
+  --white: #ffffff;
+  --green: #00dada;
   --green-tint: rgba(100,255,218,0.1);
   --pink: #f57dff;
   --blue: #57cbff;
@@ -109,7 +111,7 @@ html {
 }
 
 main {
-  margin: 0 auto;
+  margin: 0;
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
@@ -142,3 +144,23 @@ main {
       pointer-events: none;
       user-select: none;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    color: var(--lightest-slate);
+    line-height: 1.1;
+  }
+  .big-heading {
+    margin: 0;
+    font-size: clamp(40px, 8vw, 80px);
+  }
+  .medium-heading {
+    margin: 0;
+    font-size: clamp(40px, 8vw, 60px);
+  }

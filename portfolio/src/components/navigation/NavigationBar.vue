@@ -1,13 +1,13 @@
 <template>
   <header>
-    <nav class="navbar">
-      <div class="navbar-logo"><img src="../../assets/logo.png" /></div>
+    <nav>
+      <div class="navbar-logo"><p>A</p></div>
       <div class="navbar-link-list">
         <ol>
-          <li><a href="#/about">About</a></li>
-          <li><a href="#/experience">Experience</a></li>
-          <li><a href="#/work">Work</a></li>
-          <li><a href="#/contact">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ol>
         <div>
           <a
@@ -48,7 +48,7 @@ header {
   pointer-events: auto !important;
   user-select: auto !important;
 }
-.navbar {
+nav {
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
@@ -86,7 +86,6 @@ a:hover {
   color: var(--green);
 }
 .navbar-logo {
-  font-family: "Brush Script MT", cursive;
   color: var(--green);
 }
 .navbar-link-list {

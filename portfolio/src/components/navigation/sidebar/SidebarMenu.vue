@@ -2,10 +2,10 @@
   <aside aria-hidden="true" tabindex="-1">
     <nav>
       <ol>
-        <li><a href="#/about">About</a></li>
-        <li><a href="#/experience">Experience</a></li>
-        <li><a href="#/work">Work</a></li>
-        <li><a href="#/contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ol>
       <a href="/resume.pdf" class="resume-link">Resume</a>
     </nav>
