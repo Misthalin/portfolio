@@ -13,5 +13,3 @@ import ExperienceSection from "./sections/ExperienceSection.vue";
 import HeroSection from "./sections/HeroSection.vue";
 import WorkSection from "./sections/WorkSection.vue";
 </script>
-
-<style></style>

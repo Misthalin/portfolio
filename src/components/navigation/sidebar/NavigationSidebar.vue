@@ -21,13 +21,10 @@ function close() {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .hamburger-menu {
   display: none;
-}
-
-@media (max-width: 768px) {
-  .hamburger-menu {
+  @media (max-width: 768px) {
     display: block;
   }
 }

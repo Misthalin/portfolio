@@ -16,22 +16,7 @@
 
 <script setup lang="ts"></script>
 
-<style scoped>
-section {
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 0px;
-}
-.big-heading {
-  margin: 0px;
-  font-size: clamp(40px, 8vw, 80px);
-}
-
+<style scoped lang="less">
 h1 {
   margin: 0px 0px 10px 4px;
   color: var(--green);
@@ -40,17 +25,10 @@ h1 {
   font-weight: 400;
 }
 
-h2 {
-  font-weight: 600;
-  color: var(--lightest-slate);
-  line-height: 1.1;
-}
-
 h3 {
-  margin-top: 10px;
+  margin-top: 0px;
   color: var(--slate);
   line-height: 0.9;
-  font-weight: 600;
 }
 
 p > a {
@@ -60,17 +38,16 @@ p > a {
   position: relative;
   transition: var(--transition);
   color: var(--green);
-}
-
-p > a::after {
-  content: "";
-  display: block;
-  width: 0px;
-  height: 1px;
-  position: relative;
-  bottom: 0.37em;
-  background-color: var(--green);
-  transition: var(--transition);
-  opacity: 0.5;
+  &::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    position: relative;
+    bottom: 0.37em;
+    background-color: var(--green);
+    transition: var(--transition);
+    opacity: 0.5;
+  }
 }
 </style>

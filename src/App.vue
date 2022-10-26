@@ -12,5 +12,3 @@ import SideElement from "./components/SideElement.vue";
     <MainView />
   </main>
 </template>
-
-<style scoped></style>

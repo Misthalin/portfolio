@@ -18,7 +18,7 @@ const props = defineProps<{
 }>();
 </script>
 
-<style scoped>
+<style scoped lang="less">
 aside {
   display: flex;
   -webkit-box-pack: center;

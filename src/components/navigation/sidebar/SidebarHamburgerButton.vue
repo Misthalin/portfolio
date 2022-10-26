@@ -19,7 +19,7 @@ watchEffect(() => {
     : document.body.classList.remove("blur");
 });
 </script>
-<style scoped>
+<style scoped lang="less">
 button {
   cursor: pointer;
   border: 0px;
@@ -41,6 +41,24 @@ button {
   border-width: 2px;
   border-style: outset;
   border-image: initial;
+  @media (max-width: 768px) {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    margin-right: -15px;
+    padding: 15px;
+    border: 0px;
+    background-color: transparent;
+    color: inherit;
+    text-transform: none;
+    transition-timing-function: linear;
+    transition-duration: 0.15s;
+    transition-property: opacity, filter;
+  }
 }
 .hamburger-box {
   display: inline-block;
@@ -60,66 +78,46 @@ button {
     'props.isActive ? "transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s" : "transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s"'
   );
   transform: v-bind('props.isActive ? "rotate(225deg)" : "rotate(0deg)"');
-}
-.hamburger-box-inner::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: auto;
-  right: 0px;
-  height: 2px;
-  border-radius: 4px;
-  background-color: var(--green);
-  transition-timing-function: ease;
-  transition-duration: 0.15s;
-  transition-property: transform;
-  width: v-bind('isActive ? "100%" : "120%"');
-  top: v-bind('isActive ? "0px" : "-10px"');
-  opacity: v-bind('isActive ? "0" : "1"');
-  transition: v-bind(
-    'isActive ? "var(--ham-before-active)" : "var(--ham-before)"'
-  );
-}
-.hamburger-box-inner::after {
-  width: v-bind('isActive ? "100%" : "80%"');
-  bottom: v-bind('isActive ? "0px" : "-10px"');
-  transform: v-bind('isActive ? "rotate(90deg)" : "rotate(0deg)"');
-  transition: v-bind(
-    'isActive ? "var(--ham-after-active)" : "var(--ham-after)"'
-  );
-}
-.hamburger-box-inner::before,
-.hamburger-box-inner::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: auto;
-  right: 0px;
-  height: 2px;
-  border-radius: 4px;
-  background-color: var(--green);
-  transition-timing-function: ease;
-  transition-duration: 0.15s;
-  transition-property: transform;
-}
-@media (max-width: 768px) {
-  button {
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    position: relative;
-    z-index: 10;
-    margin-right: -15px;
-    padding: 15px;
-    border: 0px;
-    background-color: transparent;
-    color: inherit;
-    text-transform: none;
-    transition-timing-function: linear;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: auto;
+    right: 0px;
+    height: 2px;
+    border-radius: 4px;
+    background-color: var(--green);
+    transition-timing-function: ease;
     transition-duration: 0.15s;
-    transition-property: opacity, filter;
+    transition-property: transform;
+    width: v-bind('isActive ? "100%" : "120%"');
+    top: v-bind('isActive ? "0px" : "-10px"');
+    opacity: v-bind('isActive ? "0" : "1"');
+    transition: v-bind(
+      'isActive ? "var(--ham-before-active)" : "var(--ham-before)"'
+    );
+  }
+  &::after {
+    width: v-bind('isActive ? "100%" : "80%"');
+    bottom: v-bind('isActive ? "0px" : "-10px"');
+    transform: v-bind('isActive ? "rotate(90deg)" : "rotate(0deg)"');
+    transition: v-bind(
+      'isActive ? "var(--ham-after-active)" : "var(--ham-after)"'
+    );
+  }
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: auto;
+    right: 0px;
+    height: 2px;
+    border-radius: 4px;
+    background-color: var(--green);
+    transition-timing-function: ease;
+    transition-duration: 0.15s;
+    transition-property: transform;
   }
 }
 </style>
