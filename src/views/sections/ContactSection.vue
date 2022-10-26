@@ -1,5 +1,5 @@
 <template>
-  <div id="contact" style="height: 100vh">contact</div>
+  <section id="contact">contact</section>
 </template>
 
 <script setup lang="ts"></script>

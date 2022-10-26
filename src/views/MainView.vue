@@ -1,11 +1,9 @@
 <template>
-  <div style="margin-top: 100px; padding: 0 100px">
-    <HeroSection style="margin: 0 auto" />
-    <AboutSection />
-    <ExperienceSection />
-    <WorkSection />
-    <ContactSection />
-  </div>
+  <HeroSection />
+  <AboutSection />
+  <ExperienceSection />
+  <WorkSection />
+  <ContactSection />
 </template>
 
 <script setup lang="ts">

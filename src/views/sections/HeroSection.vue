@@ -1,13 +1,5 @@
 <template>
-  <div
-    style="
-      height: 100vh;
-      width: 70%;
-      display: flex;
-      flex-direction: column;
-      place-content: center;
-    "
-  >
+  <section>
     <h1>Hi, my name is</h1>
     <h2 class="big-heading">Adrian N. Riise.</h2>
     <h3 class="big-heading">I build things for the web.</h3>
@@ -19,12 +11,22 @@
       >
       NanoLearning platform.
     </p>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts"></script>
 
 <style scoped>
+section {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 0px;
+}
 .big-heading {
   margin: 0px;
   font-size: clamp(40px, 8vw, 80px);

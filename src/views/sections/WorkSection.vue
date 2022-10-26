@@ -1,5 +1,5 @@
 <template>
-  <div id="work" style="height: 100vh">work</div>
+  <section id="work">work</section>
 </template>
 
 <script setup lang="ts"></script>
